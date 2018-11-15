@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <!-- Hello, your reading the source code for the help page -->
+	<!-- Created by CaptainMcMarcus for CoderHire -->
+    <!-- This is the HTML code below, there might not be any comments because this isn't really for editing -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<meta name="description" content="Helper" /> <!-- Webpage Description --> 
+	<title>Helper</title> <!-- Webpage Title -->
+	<link href="style.css" rel="stylesheet" type="text/css" /> <!-- Links to the Stylesheet -->
+	
+    <script type="text/javascript" src="scripts/jquery.js"></script><!-- Link to jquery so we can center the content -->
+    
+	</head>
+	
+	<body>
+    
+    <div class="wrapper"><!-- Opens the wrapper so we can contain and center everything -->
+    	
+        <nav>
+        	<ul>
+            	<li><a href="../help.html">HOME</a></li>
+                <li><a href="instructions.html">INSTRUCTIONS</a></li>
+                <li style="margin-right: 0px;"><a href="http://coderhire.com/scripts/view/154#reviews">LEAVE A REVIEW</a></li>
+           	</ul>
+       	</nav>
+        
+        <div class="clear"></div>
+    	
+        <div class="box-wrap">
+           	<h2>UPGRADE</h2>
+            
+            <p class="text-box"><!-- PAGE TEXT -->
+            I've tried to make upgrading as easy as possible, below are guides on how to upgrade your specific version of FlatLoad
+            </p>
+
+      	</div>
+        
+        <div class="box-wrap">
+           	<h2>UPGRADE FROM V1.4 TO V1.5</h2>
+            
+            <p class="text-box"><!-- PAGE TEXT -->
+            Upgrading your version of FlatLoad 1.4 to 1.5 is very easy but if you don't want the hassle with upgrading then you can just use the already upgrade
+            versions in this download and just reconfigure it with the same settings you used previously. To upgrade your old version all you will need to do is 
+            edit index.php and style.css<br /><br />
+            
+            1. EDIT CODE IN STYLE.CSS<br />
+            1.5 fixes a weird rendering issue with the border on the avatar so you will need to open up style.css and look for the code below.</p>
+            <pre>#avatarimg {border: 2px solid #FFFFFF; border-radius: 50%; width: 170px; height: 170px; 
+float: left; margin: 15px 0 0 30px;}</pre>
+            <p>and replace it with the code below.</p>
+            <pre>#avatarimg {border-radius: 85px; -moz-border-radius: 85px; -webkit-border-radius: 85px; 
+overflow: hidden; width: 170px; height: 170px; float: left; margin: 15px 0 0 30px; 
+border: 2px solid #FFFFFF;}
+
+#avatarimg img {width: 170px; height: 170px;}</pre>
+
+			
+			<p>
+			2. EDIT INDEX.PHP
+			You now need to open up index.php and look for the code below.</p>
+            
+            <pre>echo "&lt;img id=\"avatarimg\" src=\"" . $table["avatarfull"] . "\" /&gt;";</pre>
+                      
+			<p>and replace it with the code below:</p>
+            
+            <pre>echo "&lt;div id=\"avatarimg\"&gt;";
+echo "&lt;img src=\"" . $table["avatarfull"] . "\" /&gt;";
+echo "&lt;/div&gt;";</pre>
+
+
+<p>3. YOUR DONE<br />
+That's it!, we're all done, if something has gone wrong then it's probably easier to do a new installation.</p>
+    </div>
+        
+        <div class="box-wrap">
+           	<h2>UPGRADE FROM V1.3 TO V1.4</h2>
+            
+            <p class="text-box"><!-- PAGE TEXT -->
+            Upgrading your version of FlatLoad 1.3 to 1.4 is very easy but if you don't want to hassle with upgrading then you can download
+            1.4 and just reconfigure it with the same settings you used previously.<br /><br />            
+            
+            1. ADD NEW STYLESHEETS<br />
+            In V1.4 there are now two stylesheets in your core loading screen folder, these are style.css and colour.css, these two files define
+            how the loading page should look so you need to copy these two new and updated files into your exisiting version.<br /><br />
+
+			2. ADD CODE TO INDEX.PHP
+			In V1.4 I have split some of the styling into a new CSS file called colour.css so as to make it easier for you to change the colour of 
+            the header bar.<br /><br />
+            
+            We now need to link up this new stylesheet so we need to load up index.php and look for the little snippet of code below          
+            </p>
+            
+            <pre>&lt;link href="style.css" rel="stylesheet" type="text/css" /&gt; &lt;!-- Links to the Stylesheet --&gt;</pre>
+                      
+			<p>and all we need to do is add a little bit of code underneath it, below shows what it should look like.</p>
+
+			<pre>&lt;link href="style.css" rel="stylesheet" type="text/css" /> &lt;!-- Links to the Stylesheet --&gt;
+&lt;link href="colour.css" rel="stylesheet" type="text/css" /&gt;</pre>
+
+
+<p>3. YOUR DONE<br />
+That's it!, that's how easy it is to upgrade your existing installation, you can now take advantage of the multiple coloured backgrounds feature added 
+in 1.4<br /><br />
+
+To learn how to take advantage of this new feature just open up the instructions.</p>
+    </div>
+            
+ 	</div><!-- This closes the wrapper -->
+    
+
+
+	</body><!-- Closes off the HTML Document -->
+</html>
